@@ -1,3 +1,11 @@
-<p>
-  category-detail works!
-</p>
+<mat-card class="detail-card">
+  <mat-card-header>
+    <div mat-card-avatar class="detail-header-image" [style.background-image]="bgImage"></div>
+    <mat-card-title>{{category?.header_title}}</mat-card-title>
+    <mat-card-subtitle>{{category?.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="category?.banner_img" alt="category image icon">
+  <mat-card-content>
+    <p>{{category?.submit_text}}</p>
+  </mat-card-content>
+</mat-card>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { Http, RequestOptions } from '@angular/http';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { contentHeaders } from '../headers';
-import { Http, RequestOptions, Response } from '@angular/http';
 
 @Component({
   selector: 'app-categories',

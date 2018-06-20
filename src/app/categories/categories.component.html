@@ -5,7 +5,7 @@
   </ng-container>
   <ng-container matColumnDef="title">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.data.title}}</mat-cell>
+    <mat-cell *matCellDef="let row"><a [routerLink]="row.data.id">{{row.data.title}}</a></mat-cell>
   </ng-container>
   <ng-container matColumnDef="description">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
