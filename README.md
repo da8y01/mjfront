@@ -1,5 +1,9 @@
 # Mjfront
 
+To run the project:
+* Install the node dependencies: `npm i`
+* Run the application: `npm start`
+
 I rather than use a template tried to build a custom layout using the [Material](https://material.angular.io/guide/theming) guidelines.
 
 The responsiveness was applied in the table list of categories.
