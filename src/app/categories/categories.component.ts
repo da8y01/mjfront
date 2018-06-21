@@ -18,12 +18,10 @@ export class CategoriesComponent implements OnInit {
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get('https://www.reddit.com/reddits.json', this.options).toPromise().then(reddits => {
-      console.log(reddits.json());
+    this.http.get(`https://www.reddit.com/reddits.json`, this.options).toPromise().then(reddits => {
       this.categories = reddits.json().data.children;
       this.dataSource = new MatTableDataSource(reddits.json().data.children);
       this.dataSource.paginator = this.paginator;
-      console.log(this.dataSource.data);
     }).catch(err => console.error(err));
   }
 

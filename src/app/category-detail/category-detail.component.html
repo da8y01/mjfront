@@ -7,5 +7,9 @@
   <img mat-card-image [src]="category?.banner_img" alt="category image icon">
   <mat-card-content>
     <p>{{category?.submit_text}}</p>
+    <h3>Top 5 comments of the subreddit:</h3>
+    <ul>
+      <li *ngFor="let comment of topComments"><a [href]="comment.url">{{comment.title}}</a></li>
+    </ul>
   </mat-card-content>
 </mat-card>
