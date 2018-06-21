@@ -1,15 +1,24 @@
-<mat-table [dataSource]="dataSource" matSort>
+<mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="icon">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Icon</mat-header-cell>
-    <mat-cell *matCellDef="let row"><img [src]="row.icon_img" alt="category icon"></mat-cell>
+    <mat-cell *matCellDef="let row">
+      <span class="mobile-label">Icon:</span>
+      <img [src]="row.icon_img" alt="category icon" class="cell-icon">
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="title">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
-    <mat-cell *matCellDef="let row"><a [routerLink]="row.id">{{row.title}}</a></mat-cell>
+    <mat-cell *matCellDef="let row">
+      <span class="mobile-label">Title:</span>
+      <a [routerLink]="row.id">{{row.title}}</a>
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="description">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.description}}</mat-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Text</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <span class="mobile-label">Text:</span>
+      {{row.submit_text}}
+    </mat-cell>
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;">
