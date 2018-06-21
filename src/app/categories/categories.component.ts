@@ -19,10 +19,9 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(`https://www.reddit.com/reddits.json`, this.options).toPromise().then(reddits => {
-      this.categories = reddits.json().data.children;
-      this.dataSource = new MatTableDataSource(reddits.json().data.children);
+      this.categories = reddits.json().data.children.map(category => {return category.data});
+      this.dataSource = new MatTableDataSource(this.categories);
       this.dataSource.paginator = this.paginator;
     }).catch(err => console.error(err));
   }
-
 }

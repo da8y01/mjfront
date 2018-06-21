@@ -1,15 +1,15 @@
 <mat-table [dataSource]="dataSource" matSort>
   <ng-container matColumnDef="icon">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Icon</mat-header-cell>
-    <mat-cell *matCellDef="let row"><img [src]="row.data.icon_img" alt="category icon"></mat-cell>
+    <mat-cell *matCellDef="let row"><img [src]="row.icon_img" alt="category icon"></mat-cell>
   </ng-container>
   <ng-container matColumnDef="title">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
-    <mat-cell *matCellDef="let row"><a [routerLink]="row.data.id">{{row.data.title}}</a></mat-cell>
+    <mat-cell *matCellDef="let row"><a [routerLink]="row.id">{{row.title}}</a></mat-cell>
   </ng-container>
   <ng-container matColumnDef="description">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.data.description}}</mat-cell>
+    <mat-cell *matCellDef="let row">{{row.description}}</mat-cell>
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;">
